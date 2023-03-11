@@ -1,0 +1,12 @@
+name: sql
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas
+  - notebook
+  - psycopg2
+  - pip
+  - python-dotenv
+prefix: /home/lukas/anaconda3/envs/sql
