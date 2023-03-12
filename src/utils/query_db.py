@@ -19,11 +19,13 @@ class Connection:
                 cursor.execute(query)
             except pg2.Error as e:
                 print(e)
+                results = None
             else:
                 columns = [column.name for column in cursor.description]
-                results = cursor.fetchall()
-
-                return display(pd.DataFrame(results, columns=columns))
+                results = display(pd.DataFrame(cursor.fetchall(), 
+                                               columns=columns))
+            finally:
+                return results
 
 
 @contextmanager
